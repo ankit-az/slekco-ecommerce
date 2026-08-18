@@ -177,11 +177,11 @@ CLIENT_URL=http://localhost:3000
 NODE_ENV=development
 ```
 
-*(Note: If a local MongoDB instance is not active on port 27017, the server will automatically launch `mongodb-memory-server` as a seamless fallback).*
+
 
 ### Frontend (`client/.env.local`)
 ```env
-NEXT_PUBLIC_API_URL=http://localhost:5000/api
+NEXT_PUBLIC_API_URL=https://slekco-ecommerce.onrender.com
 ```
 
 ---
@@ -196,8 +196,8 @@ NEXT_PUBLIC_API_URL=http://localhost:5000/api
    - `NEXT_PUBLIC_API_URL`: `https://your-backend-api.onrender.com/api`
 5. Deploy.
 
-### Backend Deployment (Render / Railway)
-1. Create a Web Service on [Render](https://render.com) or [Railway](https://railway.app).
+### Backend Deployment (Render)
+1. Create a Web Service on [Render](https://render.com)
 2. Set Root Directory to `server`.
 3. Set Build Command: `npm install` and Start Command: `npm start`.
 4. Add Environment Variables:
@@ -213,7 +213,7 @@ NEXT_PUBLIC_API_URL=http://localhost:5000/api
 3. Copy standard connection string into `MONGODB_URI`.
 
 ```text
-Live Demo: To be added after deployment
+Live Demo: https://slekco-ecommerce-client.vercel.app/
 ```
 
 ---
