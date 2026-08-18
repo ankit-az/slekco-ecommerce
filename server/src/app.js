@@ -14,7 +14,7 @@ const app = express();
 // Middlewares
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:3000',
+    origin: process.env.CLIENT_URL || 'http://localhost:3000'|| 'https://slekco-ecommerce-client.vercel.app',
     credentials: true
   })
 );
