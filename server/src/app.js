@@ -12,12 +12,22 @@ const contactRoutes = require('./routes/contact.routes');
 const app = express();
 
 // Middlewares
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://slekco-ecommerce-client.vercel.app",
+];
+
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:3000'|| 'https://slekco-ecommerce-client.vercel.app',
-    credentials: true
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
   })
-);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
